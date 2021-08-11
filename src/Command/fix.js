@@ -1,3 +1,4 @@
+const fixerList = require("../Fixer/FixerList");
 module.exports = class Command {
     validArguments() {
         return ['dir', 'config'];
@@ -5,11 +6,20 @@ module.exports = class Command {
 
     defaultArguments() {
         return {
-            'config': './config/default_config.js'
+            'config': '../../config/default.js'
         }
     }
 
     execute(args) {
-        console.log(args);
+        let config = new (require(args.config));
+        let fixerList = require('../Fixer/FixerList');
+
+        [].forEach.call(config.fixer(), (f) => {
+            if (!fixerList.includes(f)) {
+                console.error(`Fixer ${f} is not defined.`);
+            }
+
+            console.log(f);
+        })
     }
 }
