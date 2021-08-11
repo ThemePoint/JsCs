@@ -1,6 +1,12 @@
 module.exports = class Command {
     validArguments() {
-        return ['dir'];
+        return ['dir', 'config'];
+    }
+
+    defaultArguments() {
+        return {
+            'config': './config/default_config.js'
+        }
     }
 
     execute(args) {

@@ -14,7 +14,11 @@ module.exports = class JsCs {
         const CommandObject = new CommandClass;
 
         CommandObject.execute(
-            ArgumentMapper.map(args, CommandObject.validArguments())
+            ArgumentMapper.map(
+                args,
+                CommandObject.validArguments(),
+                CommandObject.defaultArguments()
+            )
         );
     }
 }
