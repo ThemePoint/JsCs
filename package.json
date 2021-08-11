@@ -1,0 +1,25 @@
+{
+  "name": "@themepoint/js-cs",
+  "version": "1.5.0",
+  "description": "Coding Standards fixer for JavaScript",
+  "license": "MIT",
+  "author": "Hendrik Legge <hendrik.legge@themepoint.de>",
+  "private": false,
+  "bin": {
+    "jscs": "bin/jscs.js"
+  },
+  "engines": {
+    "node": "^10.19.0 || ^12.0.0 || >=14.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "main": "src/main.js",
+  "dependencies": {
+    "core-js": "3.16.1"
+  },
+  "files": [
+    "src/",
+    "bin/",
+    "index.js"
+  ]
+}
